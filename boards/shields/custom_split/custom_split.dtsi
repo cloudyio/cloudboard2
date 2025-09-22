@@ -34,12 +34,12 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                 RC(2,6) RC(2,7) 
 
         diode-direction = "col2row";
         
-        // Row pins based on your Ergogen mapping
+        // Row pins based on your Ergogen mapping (converted to pro_micro pins)
         row-gpios
-            = <&supermini 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_numbers -> P15
-            , <&supermini 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_bottom -> P16  
-            , <&supermini 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_home -> P18
-            , <&supermini 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_top -> P19
+            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_numbers -> P15 -> D15/A1
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_bottom -> P16 -> D16/A2  
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_home -> P18 -> D18/A3
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row_top -> P19 -> D19/A4
             ;
     };
 };
