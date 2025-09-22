@@ -1,103 +1,40 @@
-# ========================================
-# FileName: build.yaml
-# Date: 07.06.2023
-# Author: Marcos Chow Castro
-# Email: mctechnology170318@gmail.com
-# GitHub: https://github.com/mctechnology17
-# Brief: configuration file for ZMK firmware
-# Board: nice_nano_v2 and puchi_ble_v1
-# shield: corne_left nice_view_adapter nice_view,
-#         corne_right nice_view_adapter nice_view,
-#         corne_left, corne_right and settings_reset
-# =========================================
-#                              ╔═╦═╦═╗
-#                       ╔════╗ ║║║║║╔╝
-#                       ║╔╗╔╗║ ║║║║║╚╗
-#                       ╚╝║║╚╝ ║╠═╩╩═╝
-#                         ║╠═╦═╣╚╦═╦╦═╦╗╔═╦═╦╦╗
-#                         ║║╩╣═╣║║║║║╬║╚╣╬║╬║║║
-#                         ╚╩═╩═╩╩╩╩═╩═╩═╩═╬╗╠╗║
-#                                         ╚═╩═╝
-# This file generates the GitHub Actions matrix
-# For simple board + shield combinations, add them
-# to the top level board and shield arrays, for more
-# control, add individual board + shield combinations to
-# the `include` property, e.g:
-#
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
-#
-# Split Keyboard Halves Unable to Pair
-#     https://zmk.dev/docs/troubleshooting
-#   - board: nice_nano_v2
-#     shield: settings_reset
-# Reset Split Keyboard Procedure
-# Perform the following steps to reset both halves of your split keyboard:
-# - Put each half of the split keyboard into bootloader mode.
-# - Flash one of the halves of the split with the downloaded settings reset UF2
-# image. Immediately after flashing the chosen half, put it into bootloader
-# mode to avoid accidental bonding between the halves.
-# - Repeat step 2 with the other half of the split keyboard.
-# - Flash the actual image for each half of the split keyboard (e.g
-# my_board_left.uf2 to the left half, my_board_right.uf2 to the right half).
-#
-# After completing these steps, pair the halves of the split keyboard
-# together by resetting them at the same time. Most commonly, this is done by
-# grounding the reset pins for each of your keyboard's microcontrollers or
-# pressing the reset buttons at the same time.
-#
-# cmake-args: -DKEYMAP_FILE=../../config/other-corne.keymap -DCONFIG_ZMK_KEYBOARD_NAME=\"other-corne\" -DEXTRA_CONF_FILE=../../config/other-corne.conf
----
-include:
-  ### CORNE START ###
-  ### nice_view START ###
-  # nice_nano_v2 + nice_epaper
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_epaper
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_View\"
-    artifact-name: nice_corne_left_view
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_epaper
-    artifact-name: nice_corne_right_view
+# ========================================# ========================================
 
-    # puchi_ble_v1 + nice_epaper
-  - board: puchi_ble_v1
-    shield: corne_left nice_view_adapter nice_epaper
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_V\"
-    artifact-name: puchi_corne_left_view
-    snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1
-    shield: corne_right nice_view_adapter nice_view
-    artifact-name: puchi_corne_right_view
+# FileName: build.yaml# FileName: build.yaml
 
-    # peripheral_left + nice_nano_v2 + nice_epaper
-  - board: nice_nano_v2
-    shield: corne_left_peripheral nice_view_adapter nice_epaper
-    artifact-name: nice_corne_left_peripheral_view
+# Date: 22.09.2025# Date: 22.09.2025
 
-    # peripheral_left + puchi_ble_v1 + nice_epaper
-  - board: puchi_ble_v1
-    shield: corne_left_peripheral nice_view_adapter nice_epaper
-    artifact-name: puchi_corne_left_peripheral_view
-    ### nice_view END ###
+# Brief: Custom Split Keyboard Configuration# Brief: Custom Split Keyboard Configuration
 
-    ### nice_oled START ###
-    # nice_nano_v2 + nice_oled
-  - board: nice_nano_v2
-    shield: corne_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_Oled\"
-    artifact-name: nice_corne_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
-    shield: corne_right nice_oled
-    artifact-name: nice_corne_right_oled
+# Board: nice_nano_v2 (SuperMini nRF52840 compatible)# Board: nice_nano_v2 (SuperMini nRF52840 compatible)
 
-    # puchi_ble_v1 + nice_oled
+# ========================================# ========================================
+
+
+
+------
+
+include:include:
+
+  ### CUSTOM SPLIT KEYBOARD ONLY ###  ### CUSTOM SPLIT KEYBOARD ONLY ###
+
+  - board: nice_nano_v2  - board: nice_nano_v2
+
+    shield: custom_split_left    shield: custom_split_left
+
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"CustomSplit\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"CustomSplit\" -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+
+    artifact-name: nice_custom_split_left    artifact-name: nice_custom_split_left
+
+    snippet: studio-rpc-usb-uart    snippet: studio-rpc-usb-uart
+
+  - board: nice_nano_v2  - board: nice_nano_v2
+
+    shield: custom_split_right    shield: custom_split_right
+
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
+
+    artifact-name: nice_custom_split_right    artifact-name: nice_custom_split_right
   - board: puchi_ble_v1
     shield: corne_left nice_oled
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_O\"
