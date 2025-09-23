@@ -7,13 +7,14 @@
 #include "custom_split.dtsi"
 
 &default_transform {
-    col-offset = <6>;
+    col-offset = <7>;
 };
 
 &kscan0 {
     // Column pins for right half (mirrored) - converted to pro_micro pins
     col-gpios
-        = <&pro_micro 14 GPIO_ACTIVE_HIGH>  // col_inner -> P14 -> D14/A0
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH>  // P101: "extra_col" (mirrored)
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // col_inner -> P14 -> D14/A0
         , <&pro_micro 10 GPIO_ACTIVE_HIGH>  // col_index -> P10 -> D10
         , <&pro_micro 9 GPIO_ACTIVE_HIGH>   // col_middle -> P9 -> D9
         , <&pro_micro 8 GPIO_ACTIVE_HIGH>   // col_ring -> P8 -> D8
