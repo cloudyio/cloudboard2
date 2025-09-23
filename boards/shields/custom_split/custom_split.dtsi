@@ -37,10 +37,10 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6)                 RC(3,7) 
         // Row pins - FIXED ORDER based on actual physical layout
         // Swapped top/bottom rows to fix R/V key placement
         row-gpios
-            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P15: "row_numbers" (top physical row)
-            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P16: "row_bottom" (QWERTY row)
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P18: "row_home" (ASDF row)  
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P19: "row_top" (ZXCV row)
+            = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P15: "row_numbers" (top physical row)
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P16: "row_bottom" (QWERTY row)
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P18: "row_home" (ASDF row)  
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P19: "row_top" (ZXCV row)
             , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P102: "extra_row" (thumb/bottom row)
             ;
     };
