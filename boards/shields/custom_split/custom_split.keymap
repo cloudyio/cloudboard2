@@ -31,22 +31,22 @@
         lower_layer {
             // Function keys, symbols, and navigation
             bindings = <
-   &kp F1    &kp F2   &kp F3   &kp F4   &kp F5   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp F11   &kp F12   &trans   &trans
-   &kp GRAVE &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR  &kp UNDER &trans   &trans
-   &trans    &trans   &trans   &trans   &trans   &trans   &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp COLON &kp DQT   &trans   &trans
-   &trans    &trans   &trans   &trans   &trans   &trans   &kp HOME &kp PG_DN &kp PG_UP &kp END &kp QMARK &trans    &trans   &trans
-             &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &kp DEL  &trans   &trans    &trans   &trans
+   &kp F1    &kp F2   &kp F3   &kp F4   &kp F5   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp F11   &kp F12   
+   &kp GRAVE &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR  &kp UNDER 
+   &trans    &trans   &trans   &trans   &trans   &trans   &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp COLON &kp DQT 
+   &trans    &trans   &trans   &trans   &trans   &trans   &kp HOME &kp PG_DN &kp PG_UP &kp END &kp QMARK &trans   
+             &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &kp DEL  &trans  
             >;
         };
 
         raise_layer {
             // Numbers, symbols, and system controls
             bindings = <
-   &kp TILDE &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR  &kp PLUS  &trans   &trans
-   &trans    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &kp N6   &kp N7   &kp N8   &kp N9   &kp N0    &kp EQUAL &trans   &trans
-   &trans    &trans   &trans   &trans   &trans   &trans   &trans   &kp N4   &kp N5   &kp N6   &kp PLUS  &kp PIPE  &trans   &trans
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT &trans &trans &trans
-             &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans   &trans
+   &kp TILDE &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR  &kp PLUS  
+   &trans    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &kp N6   &kp N7   &kp N8   &kp N9   &kp N0    &kp EQUAL
+   &trans    &trans   &trans   &trans   &trans   &trans   &trans   &kp N4   &kp N5   &kp N6   &kp PLUS  &kp PIPE  
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT &trans 
+             &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans  
             >;
         };
     };
