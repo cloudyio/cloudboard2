@@ -15,6 +15,6 @@
         , <&pro_micro 9 GPIO_ACTIVE_HIGH>   // col_middle -> P9 -> D9
         , <&pro_micro 10 GPIO_ACTIVE_HIGH>  // col_index -> P10 -> D10
         , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // col_inner -> P14 -> D14/A0
-        , <&pro_micro 101 GPIO_ACTIVE_HIGH>  // P101: "extra_col"
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // P20: "extra_col"
         ;
 };
